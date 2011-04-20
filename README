@@ -1,0 +1,45 @@
+icfbPhotoTag - Photo Tagging like on facebook jquery plugin
+==============
+
+== Overview ==
+
+This plugin provides you functions which you can use to develop photo tagging aplication like facebook already has.
+Author of this plugin is Igor Crevar. Please visit my blog for more... http://www.extrafull.com/igorcrevar/
+or this plugin page http://www.extrafull.com/igorcrevar/photo-tagging-like-facebook-jquery-plugin
+
+Plugin parameters are:
+ boxClass: 'icfbPhotoTag' - class you can used for css styling
+ boxWidth:120 - initial box(tag) width on new box creation
+ boxHeight:120 - inital box height
+ minBoxWidth:80 - minimal box width
+ minBoxHeight:80 - minimal box width
+ borderSize:2 - use this to specify box border size
+ onMouseOverBox: function(data) -  data is in format { title: 'title', id: 'id', obj: jqueryobject, coords: coordsOfMousePointer, boxClass: options.boxClass } . This method is called
+ when plugin is in "view" state and mouse pointer is over some box
+ onMouseOutOfBox: function(data) - callend in "view" state when mouse pointer lives box
+ boxes: [], - boxes passed to plugin on initialization. array is in format [{id: 10, x1:1,x2:90,y1:10,y2:90,title:'Igor Crevar'},{id: 20, x1:40,x2:130,y1:10,y2:100,title:'John John'}];
+ status: false - dont change this in this release
+
+ Easiest way to call plugin is:
+ $('#id_of_a_image').icfbPhotoTag()
+ 
+ 
+ After that you can acces some public methods of a plugin( lets say obj is $('#id_of_a_image') ):
+ obj.icfbPhotoTag.view - put plugin in viewing state - so you can see all tags all together
+ obj.icfbPhotoTag.edit - put plugin in edit state. Now you can move , resize already added tags(boxes)
+ obj.icfbPhotoTag.add  - put plugin in add state. Now you are adding new box. If you call it with  obj.icfbPhotoTag.add(false) new tag(box) will not be added automaticaly
+ obj.icfbPhotoTag.save - stop editing/adding.
+ obj.icfbPhotoTag.cancel - stop editing/adding but revert all changes maded
+ obj.icfbPhotoTag.removeBox - remove box with some index - you will never use this in most cases, but you will use method bellow
+ obj.icfbPhotoTag.removeBoxById - remove box by id
+ obj.icfbPhotoTag.setTitleOfLast - set title of last box(tag). Use this after saving new tag
+ obj.icfbPhotoTag.setIdOfLast - set id of last box(tag). Use this after saving new tag
+ obj.icfbPhotoTag.getLastBox - gets last tag(box) in format { id: , title:, x1: , x2: , y1: , y2: }
+ obj.icfbPhotoTag.getBoxes - get all tags(boxes) like array of  format above
+ obj.icfbPhotoTag.displayBoxes - obj.icfbPhotoTag.displayBoxes(true) shows all boxes obj.icfbPhotoTag.displayBoxes(false) hiddes all
+ obj.icfbPhotoTag.isNew - is plugin in add new state?
+ obj.icfbPhotoTag.displayBox -  function(_id,_visible) , hiddes or shows box(tag) with id _id
+
+ 
+ You can use this plugin for photo cropping also! but there are already better plugins for that :)
+ 
