@@ -20,11 +20,12 @@ Plugin parameters are:
  boxes: [], - boxes passed to plugin on initialization. array is in format [{id: 10, x1:1,x2:90,y1:10,y2:90,title:'Igor Crevar'},{id: 20, x1:40,x2:130,y1:10,y2:100,title:'John John'}];
  status: false - dont change this in this release
 
- Easiest way to call plugin is:
- $('#id_of_a_image').icfbPhotoTag()
+Create icfbPhotoTag on some jquery object(s) with:
+var obj = $('#id_of_a_image');
+obj.icfbPhotoTag();
  
  
- After that you can acces some public methods of a plugin( lets say obj is $('#id_of_a_image') ):
+ After that you can acces some public methods of a plugin:
  obj.icfbPhotoTag.view - put plugin in viewing state - so you can see all tags all together
  obj.icfbPhotoTag.edit - put plugin in edit state. Now you can move , resize already added tags(boxes)
  obj.icfbPhotoTag.add  - put plugin in add state. Now you are adding new box. If you call it with  obj.icfbPhotoTag.add(false) new tag(box) will not be added automaticaly
