@@ -1,0 +1,58 @@
+.icSelectionBox
+{
+  padding:5px;
+  margin:5px;
+  background:#EFEFEF;
+  border:1px solid #888;
+  width:280px;
+}
+.icSelectionBoxInput{
+  width:262px;
+  padding:2px;
+}
+.icSelectionBoxList{
+  height:120px;
+  overflow:auto;
+  width:280px;
+  margin:10px 0px;
+  border:1px dotted #AAA;
+  border-left:none;
+  border-right:none;
+  padding:4px 0px;
+}
+.icSelectionBoxList a{
+ text-decoration:none;
+ width:260px;
+ outer-style:none;
+ color:#666;
+ outline: 0 none;
+}
+.icSelectionBoxList a.selected{
+ font-weight:bold; 
+}
+
+.icSelectionBoxButtons{
+  height:40px;
+}
+
+.icSelectionBoxButtonsButton1, .icSelectionBoxButtonsButton2{
+  text-decoration:none;
+  padding:5px 0px;
+  border:1px outset #777;
+  background:#BBB;
+  display:block;
+  float:left;
+  color:#444;
+  width:60px;
+  text-align:center;
+ }
+.icSelectionBoxButtonsButton2{
+  margin-left:20px;
+}
+
+.icSelectionBoxButtonsButton1:hover, .icSelectionBoxButtonsButton2:hover{
+  border:1px inset #777;
+  background:#CCC;
+  color:#777;
+  font-weight:bold;
+}

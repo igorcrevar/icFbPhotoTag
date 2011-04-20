@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+	<link rel="stylesheet" type="text/css" href="icfbphototag.css"></link>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="icfbphototag.js"></script>
+	
+	<script type="text/javascript">
+		$(window).load(function(){
+			var obj = $('img#myimage');
+			var _boxes = [{id: 10, x1:10,x2:250,y1:140,y2:200,title:'Igor Crevar'},
+						  {id: 20, x1:210,x2:130,y1:10,y2:100,title:'John John'}];
+			obj.icfbPhotoTag( { boxes: _boxes } );  
+			
+			$('#view').click(function(){
+				obj.icfbPhotoTag.view();
+				return false;
+			});
+			$('#edit').click(function(){
+				$('#main_links').hide();
+				$('#edit_links').show();
+				obj.icfbPhotoTag.edit();
+				return false;
+			});
+			$('#new').click(function(){
+				$('#main_links').hide();
+				$('#edit_links').show();
+				obj.icfbPhotoTag.add();
+				return false;
+			});
+			var increment = 0;
+			$('#save').click(function(){
+				$('#main_links').show();
+				$('#edit_links').hide();
+				obj.icfbPhotoTag.save();
+				//set new title/id, 
+				obj.icfbPhotoTag.setTitleOfLast('New tag '+(++increment)).setIdOfLast(100);
+				return false;
+			});
+			$('#cancel').click(function(){
+				$('#main_links').show();
+				$('#edit_links').hide();
+				obj.icfbPhotoTag.cancel();
+				return false;
+			});
+			$('#save_all').click(function(){
+				var boxes = obj.icfbPhotoTag.getBoxes();
+				var s = '';
+				for (i in boxes)
+				{
+					var k = 0;
+					for (j in boxes[i])
+					{
+						if ( k++ ) s += ', ';
+						s += j + ': '+boxes[i][j];
+					}
+					s += "\n";
+				}
+				alert(s);
+				return false;
+			});
+		});
+	</script>
+  </head>
+  <body>
+  	<div id="userbox" style="float:right;width:200px">
+  	</div>
+		<p style="margin:50px;">
+			<img id="myimage" src="b_1246622364p1.jpg" alt="" />			
+		</p>
+		<p id="coords"></p>
+		
+		<div id="main_links">
+			<a id="view" href="#">View</a>
+			&nbsp; 
+			<a id="new" href="#">New</a>
+			&nbsp; 
+			<a id="edit" href="#">Edit</a>
+			&nbsp; &nbsp; &nbsp;
+			<a id="save_all" href="#">Save All</a>
+		</div>
+		<div id="edit_links" style="display:none">
+			<a id="save" href="#">Save</a>
+			<a id="cancel" href="#">Cancel</a>
+		</div>
+
+  </body>
+</html>
