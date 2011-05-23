@@ -4,8 +4,6 @@ icfbPhotoTag - Photo Tagging like on facebook jquery plugin
 == Overview ==
 
 This plugin provides you functions which you can use to develop photo tagging aplication like facebook already has.
-Author of this plugin is Igor Crevar. Please visit my blog for more... http://www.extrafull.com/igorcrevar/
-or this plugin page http://www.extrafull.com/igorcrevar/photo-tagging-like-facebook-jquery-plugin
 
 Plugin parameters are:
  boxClass: 'icfbPhotoTag' - class you can used for css styling
